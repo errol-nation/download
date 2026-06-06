@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrapment</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    .watermark-png {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 1;
+    }
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      line-height: 1.6;
+      background: transparent;
+    }
+    .center-frame {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      align-items: start;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 8px 32px rgba(46, 46, 46, 0.3);
+    }
+    .left-panel {
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      color: rgba(255, 255, 255, 0.9);
+      box-shadow: none;
+      text-align: left;
+    }
+    .left-panel h2 {
+      margin-top: 22;
+      font-family: 'Courier New', monospace;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+    }
+    .left-panel p,
+    .left-panel li {
+      font-family: 'Courier New', monospace;
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0 0 14px 0;
+    }
+    .left-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .left-panel li::before {
+      content: '•';
+      color: #8fbcff;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .center-frame::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+    .center-frame .logo {
+      width: 500px;
+      height: 100px;
+      margin: 0 auto 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .center-frame .title {
+      color: white;
+      font-family: 'Courier New', monospace;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 0 15px 0;
+    }
+    .center-frame .description {
+      color: rgba(255, 255, 255, 0.8);
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .center-frame .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .center-frame .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    #developers {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #developers-title {
+      width: 100%;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    #developer-avatars {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+    }
+    .developer-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .developer-avatar:hover {
+      transform: scale(1.08);
+      border-color: rgba(255, 255, 255, 0.9);
+    }
+    #developers::-webkit-scrollbar {
+      width: 8px;
+    }
+    #developers::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <script src="load.js"></script>
+  <script>
+    LoadDevs('errol-nation'); // #Disclaimer this is our group's Github organization, if you rename the group please remember to change this or else it will break.
+  </script>
+  <img src="images\bg.png" class="watermark-png" alt="Watermark">
+  <div class="center-frame">
+    <aside class="left-panel">
+      <h2>About Entrapment</h2>
+      <p>DISCLAIMER: Game has jumpscare elements.</p>
+      <ul>
+        <div id="developers"></div>
+        <li>Engine: Godot</li>
+        <li>Release: April 25, 2026</li>
+        <li>Genre: Horror / Indie</li>
+      </ul>
+    </aside>
+    <div class="main-content">
+      <div class="logo" style="background-image: url('images/ic.png');"></div>
+      <p class="description">Entrapment is a Godot-engine indie horror game developed by Errol (Eternal Ring for Resilience Over Loss), made on April 25, 2026.</p>
+      <h1 class="title">Trailer</h1>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/p1dZS8idrPg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
