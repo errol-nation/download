@@ -174,20 +174,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
     left: 0;
     right: 0;
     width: 100%;
-    position: fixed;
 }
-.footer-copy {
+.footer-copy, .footer-copy2 {
     font-family: 'VCR OSD Mono', monospace;
-    font-size: 15px;
-    letter-spacing: 0.04em;
-    margin-right: auto;
-    color: rgba(255,255,255,0.18);
-}
-.footer-copy2 {
-    font-family: Inter;
     font-size: 15px;
     letter-spacing: 0.04em;
     margin-right: auto;
